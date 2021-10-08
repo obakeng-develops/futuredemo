@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
+import { Link } from "react-router-dom";
 
 function Navigation() {
     return (
@@ -12,8 +13,8 @@ function Navigation() {
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <Nav className="ml-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#features">Notifications</Nav.Link>
+                        <Nav.Link><Link to="/">Home</Link></Nav.Link>
+                        <Nav.Link><Link to="/notifications">Notifications</Link></Nav.Link>
                         <Nav.Link href="#clients">Clients</Nav.Link>
                         <Nav.Link href="#requests">Requests</Nav.Link>
                         <Nav.Link href="#profile">Profile</Nav.Link>

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { render } from "react-dom";
 import Navigation from "./Navigation";
+import Home from "./Home";
 import Container from "react-bootstrap/esm/Container";
 import Button from "react-bootstrap/Button";
-import LinkContainer from "react-router-bootstrap";
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 export default function App() {
 
@@ -26,16 +27,19 @@ export default function App() {
 
     return (
         <>
+        <Router>
         <Navigation/>
         <div className="section">
-            <Container>
-                <h1 className="mt-5 mb-3 large">Welcome Back, {user}.</h1>
-                <LinkContainer>
-                    <Button variant="primary">Create Request</Button>{' '}
-                </LinkContainer>
-                <Button variant="success">See Clients</Button>{' '}
-            </Container>
+            <Switch>
+                <Route path="/">
+                    <Home user={user}/>
+                </Route>
+                <Route path="/">
+                    <Home user={user}/>
+                </Route>
+            </Switch>
         </div>
+        </Router>
         </>
         )
 }
