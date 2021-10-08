@@ -1,0 +1,13 @@
+body {
+  font-family: "Space Mono", monospace;
+}
+
+.large {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+}
+
+.small {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+}
