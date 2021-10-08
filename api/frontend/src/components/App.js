@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
+import Navigation from "./Navigation";
 
 export default function App() {
-    return <h1>HEloo</h1>
+    return (
+        <Navigation/>
+        )
 }
 
 const appDiv = document.getElementById("app");
