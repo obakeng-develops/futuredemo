@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { render } from "react-dom";
 import Navigation from "./Navigation";
 import Home from "./Home";
-import Container from "react-bootstrap/esm/Container";
-import Button from "react-bootstrap/Button";
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import Clients from "./Clients";
+import Notifications from "./Notifications";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 export default function App() {
 
@@ -30,14 +30,15 @@ export default function App() {
         <Router>
         <Navigation/>
         <div className="section">
-            <Switch>
-                <Route path="/">
+            <Route exact path="/">
                     <Home user={user}/>
-                </Route>
-                <Route path="/">
-                    <Home user={user}/>
-                </Route>
-            </Switch>
+            </Route>
+            <Route path="/notifications">
+                    <Notifications/>
+            </Route>
+            <Route path="/clients">
+                    <Clients/>
+            </Route>
         </div>
         </Router>
         </>

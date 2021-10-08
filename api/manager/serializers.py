@@ -1,7 +1,10 @@
 from rest_framework import serializers
 from .models import Requests
+from user.serializers import CustomUserSerializer
 
 class RequestsSerializer(serializers.ModelSerializer):
+    client = CustomUserSerializer()
+    manager = CustomUserSerializer()
 
     class Meta:
         model = Requests
