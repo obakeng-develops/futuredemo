@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
 
 function Notifications() {
 
@@ -14,7 +15,6 @@ function Notifications() {
             throw response;
         })
         .then (data => {
-            console.log(data);
             setNotifications(data);
         })
         .catch(error => {
@@ -29,11 +29,18 @@ function Notifications() {
                 <h1 className="large">Notifications</h1>
                 <Card>
                     <div className="p-4">
-                        {/* {
+                        {
                             notifications.map(notification => {
-                                return <h1>{notification.title}</h1>
+                                return (
+                                    <>
+                                <div className="">
+                                    <h3 className="h4" key={notification.client.id}>Your client - <strong>{notification.client.email}</strong> has uploaded their documents.</h3>
+                                    <Button variant="primary" key={notification.client.role}>View</Button>
+                                </div>
+                                </>
+                                )
                             })
-                        } */}
+                        }
                     </div>
                 </Card>
             </div>
