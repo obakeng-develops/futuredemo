@@ -12,7 +12,7 @@ class RequestAPIView(APIView):
         """
         List all requests.
         """
-        groups = Requests.objects.all()
+        groups = Requests.objects.filter(isDone=True)
         serializer = RequestsSerializer(groups, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
