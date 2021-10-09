@@ -10,7 +10,7 @@ from .views import (
 
 urlpatterns = [
     path("groups/", ClientGroupAPIView.as_view()),
-    path("groups/member/<int:user_id>/", ClientGroupDetailAPIView.as_view()),
+    path("groups/manager/<int:manager_id>/", ClientGroupDetailAPIView.as_view()),
     path("membership/manager/<int:manager_id>", MembershipDetailAPIView.as_view()),
     path("memberships/", MembershipAPIView.as_view()),
     path("documents/", DocumentAPIView.as_view()),

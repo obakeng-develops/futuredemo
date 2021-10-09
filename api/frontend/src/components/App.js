@@ -8,14 +8,14 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 export default function App() {
 
-    const [user, setUser] = useState('');
+    const [user, setUser] = useState([]);
 
     const getUser = async () => {
         try {
             const user = await fetch(`http://127.0.0.1:8000/api/user/profile/4`)
-            const data = await user.json()
+            const data = await user.json();
 
-            setUser(data.first_name);
+            setUser(data);
         } catch (err) {
             console.log(err.message);
         }
@@ -31,7 +31,7 @@ export default function App() {
         <Navigation/>
         <div className="section">
             <Route exact path="/">
-                    <Home user={user}/>
+                    <Home user={user.first_name}/>
             </Route>
             <Route path="/notifications">
                     <Notifications/>

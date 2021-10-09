@@ -6,23 +6,20 @@ function Notifications() {
 
     const [notifications, setNotifications] = useState([]);
 
-    const getUser = async () => {
-        try {
-            const notifications = await fetch(`http://127.0.0.1:8000/api/manager/requests`)
-            const data = await notifications.json();
-
-            data.map(user => {
-                console.log(user.request_notes);
-            });
-
-            setNotifications(data);
-        } catch (err) {
-            console.log(err.message);
-        }
-    };
-
     useEffect(() => {
-        getUser();
+        fetch(`http://127.0.0.1:8000/api/manager/requests`).then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw response;
+        })
+        .then (data => {
+            console.log(data);
+            setNotifications(data);
+        })
+        .catch(error => {
+            console.error("Error fetching data: ", error);
+        })
     }, []);
 
     return (
@@ -32,7 +29,11 @@ function Notifications() {
                 <h1 className="large">Notifications</h1>
                 <Card>
                     <div className="p-4">
-                        
+                        {/* {
+                            notifications.map(notification => {
+                                return <h1>{notification.title}</h1>
+                            })
+                        } */}
                     </div>
                 </Card>
             </div>

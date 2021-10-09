@@ -34,11 +34,11 @@ class ClientGroupAPIView(APIView):
 # Client Group Detail View
 class ClientGroupDetailAPIView(APIView):
 
-    def get(self, request, user_id, *args, **kwargs):
+    def get(self, request, manager_id, *args, **kwargs):
         """
         Get group association.
         """
-        group = ClientGroup.objects.filter(clients__id=user_id)
+        group = ClientGroup.objects.filter(manager__id=manager_id)
         serializer = ClientGroupSerializer(group, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
@@ -64,6 +64,14 @@ class MembershipDetailAPIView(APIView):
             return ClientGroup.objects.get(manager=manager_id)
         except ClientGroup.DoesNotExist:
             return None
+
+    def get(self, request, manager_id, *args, **kwargs):
+        """
+        Get membership.
+        """
+        membership = Membership.objects.filter(group__manager__id=manager_id)
+        serializer = MembershipSerializer(membership, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request, manager_id, *args, **kwargs):
         """

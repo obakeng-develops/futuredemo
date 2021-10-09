@@ -13,11 +13,11 @@ function Navigation() {
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <Nav className="ml-auto">
-                        <Nav.Link><NavLink to="/">Home</NavLink></Nav.Link>
-                        <Nav.Link><NavLink to="/notifications">Notifications</NavLink></Nav.Link>
-                        <Nav.Link><Link to="/clients">Clients</Link></Nav.Link>
-                        <Nav.Link><Link to="/requests">Requests</Link></Nav.Link>
-                        <Nav.Link><Link to="/profile">Profile</Link></Nav.Link>
+                        <Link to="/" className="mx-2">Home</Link>
+                        <Link to="/notifications" className="mx-2">Notifications</Link>{''}
+                        <Link to="/clients" className="mx-2">Clients</Link>
+                        <Link to="/requests" className="mx-2">Requests</Link>
+                        <Link to="/profile" className="mx-2">Profile</Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
