@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 function Notifications() {
 
@@ -15,6 +16,7 @@ function Notifications() {
             throw response;
         })
         .then (data => {
+            console.log(data);
             setNotifications(data);
         })
         .catch(error => {
@@ -35,7 +37,7 @@ function Notifications() {
                                     <>
                                 <div className="">
                                     <h3 className="h4" key={notification.client.id}>Your client - <strong>{notification.client.email}</strong> has uploaded their documents.</h3>
-                                    <Button variant="primary" key={notification.client.role}>View</Button>
+                                    <Link to={`/client/${notification.client.id}`}><Button variant="primary" key={notification.client.role}>View</Button></Link>
                                 </div>
                                 </>
                                 )

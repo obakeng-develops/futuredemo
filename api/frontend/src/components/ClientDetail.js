@@ -30,7 +30,7 @@ function ClientDetail({ match, location }) {
                 <Card>
                     {
                         <>
-                            <div className="p-4" key={clientDetail.manager.id}>
+                            <div className="p-4">
                                 <h1 className="h5">Uploaded documents:</h1>
                                 <p className="text-muted">{clientDetail.document}</p>
                             </div>
