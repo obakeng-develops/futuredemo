@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/esm/Container";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 
 function Clients() {
 
@@ -38,7 +39,7 @@ function Clients() {
                                     <div className="flex p-4 flex-inline">
                                         <h1 className="h3" key={client.client.id}>{client.client.email}</h1>
                                         <h1 className="h5 text-muted" key={client.group.client_group_name}>Date joined: {client.date_joined}</h1>
-                                        <Button variant="primary">View</Button>
+                                        <Link to="/client"><Button variant="primary">View</Button></Link>
                                     </div>
                                 </Card>
                                 </>

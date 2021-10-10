@@ -4,6 +4,7 @@ import Navigation from "./Navigation";
 import Home from "./Home";
 import Clients from "./Clients";
 import Request from "./Request";
+import ClientDetail from "./ClientDetail";
 import Notifications from "./Notifications";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -42,6 +43,9 @@ export default function App() {
             </Route>
             <Route path="/request">
                     <Request/>
+            </Route>
+            <Route path="/client">
+                    <ClientDetail/>
             </Route>
         </div>
         </Router>
