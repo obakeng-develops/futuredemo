@@ -35,11 +35,11 @@ function Clients() {
                         clients.map(client => {
                             return (
                                 <>
-                                <Card className="w-50 my-3 shadow-sm">
+                                <Card className="w-50 my-3 shadow-sm" key={client.client.id}>
                                     <div className="flex p-4 flex-inline">
-                                        <h1 className="h3" key={client.client.id}>{client.client.email}</h1>
-                                        <h1 className="h5 text-muted" key={client.group.client_group_name}>Date joined: {client.date_joined}</h1>
-                                        <Link to="/client"><Button variant="primary">View</Button></Link>
+                                        <h1 className="h3">{client.client.email}</h1>
+                                        <h1 className="h5 text-muted">Date joined: {client.date_joined}</h1>
+                                        <Link to={`/client/${client.client.id}`}><Button variant="primary">View</Button></Link>
                                     </div>
                                 </Card>
                                 </>

@@ -6,7 +6,7 @@ import Requests from "./Requests";
 import Clients from "./Clients";
 import ClientDetail from "./ClientDetail";
 import Notifications from "./Notifications";
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 export default function App() {
 
@@ -44,9 +44,7 @@ export default function App() {
             <Route path="/requests">
                 <Requests/>
             </Route>
-            <Route path="/client">
-                    <ClientDetail/>
-            </Route>
+            <Route path="/client/:id" component={ClientDetail}/>
         </div>
         </Router>
         </>
