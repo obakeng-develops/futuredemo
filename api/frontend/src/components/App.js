@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { render } from "react-dom";
 import Navigation from "./Navigation";
 import Home from "./Home";
+import Requests from "./Requests";
 import Clients from "./Clients";
 import ClientDetail from "./ClientDetail";
 import Notifications from "./Notifications";
@@ -39,6 +40,9 @@ export default function App() {
             </Route>
             <Route path="/clients">
                     <Clients/>
+            </Route>
+            <Route path="/requests">
+                <Requests/>
             </Route>
             <Route path="/client">
                     <ClientDetail/>
