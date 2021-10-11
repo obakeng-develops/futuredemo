@@ -9,3 +9,10 @@ class RequestsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Requests
         fields = ['id', 'manager', 'client', 'request_notes', 'request_date', 'isDone']
+
+class CreateRequestsSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Requests
+        fields = ['id', 'manager', 'client', 'request_notes', 'request_date', 'isDone']
+        

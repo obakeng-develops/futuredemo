@@ -28,15 +28,24 @@ function Requests() {
         })
     }, []);
 
+    const handleSelectChange = event => {
+        setClient(event.target.value);
+    };
+
+    const handleSubmit = event => {
+        event.preventDefault();
+        alert(`${client}`);
+    };
+
     return (
         <Container>
             <div className="mt-5">
                 <h1 className="large">New Request</h1>
                 <Card className="w-50 shadow-sm">
-                    <Form className="p-4">
+                    <Form className="p-4" onSubmit={handleSubmit}>
                         <Form.Group className="mb-3" controlId="clientSelect">
                             <Form.Label>Clients</Form.Label>
-                            <Form.Select aria-label="Default select example">
+                            <Form.Select aria-label="Default select example" onChange={handleSelectChange}>
                                 {
                                     clients.map(client => {
                                         return (

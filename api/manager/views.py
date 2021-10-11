@@ -3,7 +3,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Requests
-from .serializers import RequestsSerializer
+from .serializers import RequestsSerializer, CreateRequestsSerializer
 
 # Request API VIew
 class RequestAPIView(APIView):
@@ -26,10 +26,12 @@ class RequestAPIView(APIView):
             'request_notes': request.data.get('request_notes'),
         }
 
-        serializer = RequestsSerializer(data=data)
+        serializer = CreateRequestsSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 # Request Detail API View
 class RequestDetailAPIView(APIView):
