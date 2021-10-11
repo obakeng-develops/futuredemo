@@ -9,8 +9,10 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 export default function App() {
 
+    // user state variable
     const [user, setUser] = useState([]);
 
+    // API Call to get user
     const getUser = async () => {
         try {
             const user = await fetch(`http://127.0.0.1:8000/api/user/profile/4`)
@@ -22,6 +24,7 @@ export default function App() {
         }
     };
 
+    // call the getUser function in useEffect
     useEffect(() => {
         getUser();
     }, []);

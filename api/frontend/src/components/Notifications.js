@@ -6,8 +6,10 @@ import { Link } from "react-router-dom";
 
 function Notifications() {
 
+    // State variable for notifications
     const [notifications, setNotifications] = useState([]);
 
+    // API call to fetch all completed client requests
     useEffect(() => {
         fetch(`http://127.0.0.1:8000/api/manager/requests`).then(response => {
             if (response.ok) {

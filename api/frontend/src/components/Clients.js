@@ -6,8 +6,11 @@ import { Link } from "react-router-dom";
 
 function Clients() {
 
+    // State variable
     const [clients, setClients] = useState([]);
 
+
+    // API call to fetch manager's clients
     useEffect(() => {
         fetch(`http://127.0.0.1:8000/api/client/membership/manager/4`)
         .then(response => {

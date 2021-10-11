@@ -2,11 +2,15 @@ import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 
-function ClientDetail({ match, location }) {
+function ClientDetail({ match }) {
 
+    // Match params to get individual id of the client
     const { params: { id } } = match;
+
+    // State variable
     const [clientDetail, setClientDetail] = useState([]);
 
+    // API call to fetch the individual client
     useEffect(() => {
         fetch(`http://127.0.0.1:8000/api/client/documents/client/${id}`)
         .then((response) => {
