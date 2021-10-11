@@ -96,8 +96,6 @@ object-assign
 
 /*! ./Notifications */
 
-/*! ./Requests */
-
 /*! ./SelectableContext */
 
 /*! ./Switch */
@@ -365,10 +363,6 @@ object-assign
 /*!***********************************!*\
   !*** ./src/components/Clients.js ***!
   \***********************************/
-
-/*!************************************!*\
-  !*** ./src/components/Requests.js ***!
-  \************************************/
 
 /*!*************************************!*\
   !*** ./node_modules/react/index.js ***!

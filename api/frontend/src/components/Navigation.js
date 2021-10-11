@@ -16,7 +16,6 @@ function Navigation() {
                         <Link to="/" className="mx-2">Home</Link>
                         <Link to="/notifications" className="mx-2">Notifications</Link>{''}
                         <Link to="/clients" className="mx-2">Clients</Link>
-                        <Link to="/requests" className="mx-2">Requests</Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

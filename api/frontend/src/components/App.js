@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { render } from "react-dom";
 import Navigation from "./Navigation";
 import Home from "./Home";
-import Requests from "./Requests";
 import Clients from "./Clients";
 import ClientDetail from "./ClientDetail";
 import Notifications from "./Notifications";
@@ -35,15 +34,8 @@ export default function App() {
             <Route exact path="/">
                     <Home user={user.first_name}/>
             </Route>
-            <Route path="/notifications">
-                    <Notifications/>
-            </Route>
-            <Route path="/clients">
-                    <Clients/>
-            </Route>
-            <Route path="/requests">
-                <Requests/>
-            </Route>
+            <Route path="/notifications" component={Notifications}/>
+            <Route path="/clients" component={Clients}/>
             <Route path="/client/:id" component={ClientDetail}/>
         </div>
         </Router>
