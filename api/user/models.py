@@ -30,14 +30,3 @@ class CustomUser(AbstractUser):
 
     def __str__(self):
         return self.email
-
-class Profile(models.Model):
-    """
-    User profile mapping.
-    """
-    user = models.OneToOneField(CustomUser, related_name='customer_user_profile', on_delete=models.CASCADE)
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.first_name + " " + self.last_name
