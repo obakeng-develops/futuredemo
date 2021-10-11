@@ -33,7 +33,7 @@ function Requests() {
             <div className="mt-5">
                 <h1 className="large">New Request</h1>
                 <Card className="w-50 shadow-sm">
-                    <Form className="p-4" onSubmit={this.handleSubmit}>
+                    <Form className="p-4">
                         <Form.Group className="mb-3" controlId="clientSelect">
                             <Form.Label>Clients</Form.Label>
                             <Form.Select aria-label="Default select example">
