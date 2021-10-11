@@ -11,6 +11,12 @@ class ClientGroupSerializer(serializers.ModelSerializer):
         model = ClientGroup
         fields = ['id', 'manager', 'client_group_name', 'clients']
 
+class CreateClientGroupSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = ClientGroup
+        fields = ['id', 'manager', 'client_group_name', 'clients']
+
 class MembershipSerializer(serializers.ModelSerializer):
     client = CustomUserSerializer()
     group = ClientGroupSerializer()
@@ -22,6 +28,12 @@ class MembershipSerializer(serializers.ModelSerializer):
 class DocumentSerializer(serializers.ModelSerializer):
     client = CustomUserSerializer()
     manager = CustomUserSerializer()
+    
+    class Meta:
+        model = Document
+        fields = ['id', 'document', 'client', 'manager', 'created_at', 'updated_at']
+
+class CreateDocumentSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Document
