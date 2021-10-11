@@ -1,3 +1,5 @@
+# Built by Obakeng Mosadi - https://github.com/obakeng-develops
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
