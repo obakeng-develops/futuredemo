@@ -2,17 +2,14 @@ import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 
-function ClientDetail({ match }) {
-
-    // Match params to get individual id of the client
-    const { params: { id } } = match;
+function ClientDetail() {
 
     // State variable
     const [clientDetail, setClientDetail] = useState([]);
 
     // API call to fetch the individual client
     useEffect(() => {
-        fetch(`http://127.0.0.1:8000/api/client/documents/client/${id}`)
+        fetch(`http://127.0.0.1:8000/api/client/documents/2`)
         .then((response) => {
             if (response.ok) {
                 return response.json();
@@ -20,12 +17,13 @@ function ClientDetail({ match }) {
             throw response;
         })
         .then(data => {
-            setClientDetail(data[0]);
+            console.log(data);
+            setClientDetail(data);
         })
         .catch((error) => {
             console.log(error);
         })
-    }, [id]);
+    });
 
 
     return (
